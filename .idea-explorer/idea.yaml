@@ -1,0 +1,77 @@
+version: '1.1'
+idea:
+  title: 'The Review Death Spiral: Equilibrium Modeling of Peer Review under AI-Driven
+    Scale'
+  domain: artificial_intelligence
+  hypothesis: 'Peer review systems with endogenous review noise can exhibit multiple
+    equilibria, including a collapsed regime with excessive submissions and low filtering
+    quality. AI-driven reductions in submission cost can trigger sharp phase transitions,
+    while increasing review capacity without improving quality-sensitive discrimination
+    worsens equilibrium outcomes; improvements to review precision stabilize the system.
+
+    '
+  background:
+    description: "We model scientific peer review as an equilibrium system with strategic\
+      \ authors and capacity-constrained reviewers.\nPapers have intrinsic quality\
+      \ q \u2208 [0,1], drawn from a known distribution F. Submitting a paper incurs\
+      \ cost c, and acceptance yields payoff V. Authors submit if V \xB7 P_acc(q;\
+      \ S) \u2265 c, inducing an endogenous quality threshold q*(S) and submission\
+      \ volume S = 1 \u2212 F(q*(S)).\nReviewers assign noisy scores s = q + \u03B5\
+      , where \u03B5 ~ N(0, \u03C3\xB2(S)). Review noise increases with load relative\
+      \ to capacity K:\n  \u03C3\xB2(S) = \u03C3\u2080\xB2 \xB7 (1 + \u03B1 \xB7 max(0,\
+      \ S/K \u2212 1)),\ncapturing degradation of review quality when submissions\
+      \ exceed capacity.\nThe venue accepts a fixed fraction \u03C4 of submissions\
+      \ based on scores, implying that acceptance probability becomes less sensitive\
+      \ to intrinsic quality as \u03C3\xB2(S) rises. This creates a positive feedback\
+      \ loop: higher S \u2192 noisier review \u2192 weaker filtering \u2192 lower\
+      \ submission thresholds \u2192 higher S.\nAI is modeled as a structural intervention\
+      \ that alters submission costs, review capacity, and/or review precision, potentially\
+      \ shifting the system between equilibria.\n"
+  methodology:
+    approach: "Theory-driven simulation of equilibrium submission behavior under endogenous\
+      \ review noise, with comparative statics over AI intervention parameters.\n\
+      Basic model components: - Quality distribution F(q) (e.g., Beta distribution)\
+      \ - Submission cost c and acceptance value V - Review capacity K and noise growth\
+      \ rate \u03B1 - Acceptance fraction \u03C4\nEquilibrium is defined as a fixed\
+      \ point of the submission mapping\n  S = 1 \u2212 F(q*(S)),\nwhere q*(S) solves\
+      \ V \xB7 P_acc(q; S) = c.\nAI interventions are introduced as parameter shifts:\n\
+      (1) Submission cost reduction:\n    c = c\u2080 \u2212 \u0394_c\n    Models\
+      \ AI-assisted writing and automation.\n\n(2) Review capacity expansion:\n  \
+      \  K = K\u2080 + \u0394_K\n    Models AI-assisted reviewing that increases throughput.\n\
+      \n(3) Review precision improvement:\n    \u03C3\u2080\xB2 = \u03C3_base\xB2\
+      \ \xB7 (1 \u2212 \u03B2 \xB7 \u0394_R)\n    Models AI tools that improve discrimination\
+      \ quality rather than speed.\n\nSimulations compute equilibrium submission volume,\
+      \ average accepted quality, and stability properties as functions of these parameters,\
+      \ identifying phase transitions and multiple equilibria.\n"
+  expected_outputs:
+  - type: analysis
+    format: markdown
+    description: Formal model specification and equilibrium characterization
+  - type: visualization
+    format: png
+    description: Phase diagrams over submission cost and review quality parameters
+  - type: visualization
+    format: png
+    description: Comparative statics of AI interventions on equilibrium outcomes
+  - type: code
+    format: python
+    description: Simulation code for fixed-point computation and plotting
+  evaluation_criteria:
+  - Existence of parameter regimes with multiple equilibria
+  - Identification of tipping points induced by submission cost reductions
+  - Demonstration that capacity expansion without precision improvement degrades outcomes
+  - Stabilization effects from improved review discrimination
+  metadata:
+    author: Chenhao Tan
+    tags:
+    - peer-review
+    - ai-and-science
+    - equilibrium-models
+    - scientific-incentives
+    - review-systems
+    priority: high
+    idea_id: the_review_death_spiral__equil_20260106_205027_c0e7b88c
+    created_at: '2026-01-06T20:50:27.201349'
+    status: submitted
+    github_repo_name: review-death-spiral-abe5
+    github_repo_url: https://github.com/ChicagoHAI/review-death-spiral-abe5
