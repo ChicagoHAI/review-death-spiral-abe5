@@ -1,13 +1,23 @@
 {
-  "success": false,
+  "success": true,
   "stages": {
     "resource_finder": {
-      "success": false,
-      "completion_marker": null,
-      "outputs": {},
+      "success": true,
+      "completion_marker": "/net/scratch/chenhao/idea_explorer_spaces/review-death-spiral-abe5/.resource_finder_complete",
+      "outputs": {
+        "literature_review": "/net/scratch/chenhao/idea_explorer_spaces/review-death-spiral-abe5/literature_review.md",
+        "resources_catalog": "/net/scratch/chenhao/idea_explorer_spaces/review-death-spiral-abe5/resources.md"
+      },
       "log_file": "/net/scratch/chenhao/idea_explorer_spaces/review-death-spiral-abe5/logs/resource_finder_claude.log",
       "transcript_file": "/net/scratch/chenhao/idea_explorer_spaces/review-death-spiral-abe5/logs/resource_finder_claude_transcript.jsonl",
-      "elapsed_time": 154.49713325500488
+      "elapsed_time": 3810.8470270633698
+    },
+    "experiment_runner": {
+      "success": true,
+      "return_code": 0,
+      "elapsed_time": 1882.4903826713562,
+      "log_file": "/net/scratch/chenhao/idea_explorer_spaces/review-death-spiral-abe5/logs/execution_claude.log",
+      "transcript_file": "/net/scratch/chenhao/idea_explorer_spaces/review-death-spiral-abe5/logs/execution_claude_transcript.jsonl"
     }
   },
   "work_dir": "/net/scratch/chenhao/idea_explorer_spaces/review-death-spiral-abe5"
